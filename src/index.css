@@ -1,24 +1,22 @@
-
-*{
-font-family:'Times New Roman', Times, serif
+* {
+  font-family: "Times New Roman", Times, serif;
 }
 
 .nav-item {
-    position: relative;
-  }
-  
-  .nav-item::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .nav-item:hover::after {
-    width: 100%;
-  }
-  
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
