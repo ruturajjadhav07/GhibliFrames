@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import { Link } from "react-router-dom";
 import Main from "../Main";
 import Footer from "./Footer";
 import ghibliBanner from "../../assets/anime.jpg";
+
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +19,6 @@ const Nav = () => {
         setScrolled(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,7 +34,7 @@ const Nav = () => {
           minHeight: "100vh",
         }}
       >
-        {/* Overlay for readability */}
+
         <div
           style={{
             position: "absolute",
@@ -40,7 +42,7 @@ const Nav = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(123, 175, 212, 0.7)", // Blue overlay
+            backgroundColor: "rgba(123, 175, 212, 0.7)", 
           }}
         ></div>
 
@@ -66,17 +68,20 @@ const Nav = () => {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <div
+              className="collapse navbar-collapse justify-content-center"
+              id="navbarNav"
+            >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <a className="nav-link active" aria-current="page">
                     Home
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" href="#">
-                    Get Started
-                  </a>
+                  <Link className="nav-link active btn" to="/gallery">
+                    Gallery
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -84,7 +89,10 @@ const Nav = () => {
         </nav>
 
         {/* Content */}
-        <div className="container col-md-10 position-relative" style={{ paddingTop: "40px" }}>
+        <div
+          className="container col-md-10 position-relative"
+          style={{ paddingTop: "40px" }}
+        >
           <hr></hr>
           <Main />
           <Footer />

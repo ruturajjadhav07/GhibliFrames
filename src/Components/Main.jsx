@@ -4,13 +4,13 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
 
 import About from "./About";
-
+import Carousel from "./Carousel";
 const Main = () => {
   let navigate = useNavigate();
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate("/upload");
+    navigate("/gallery");
   };
 
   return (
@@ -19,7 +19,7 @@ const Main = () => {
         <div
           className="p-4 m-4 rounded-3 shadow"
           style={{
-            backgroundColor: "rgba(196, 219, 240, 0.4)", 
+            backgroundColor: "rgba(196, 219, 240, 0.4)",
           }}
         >
           <div className="p-4">
@@ -39,10 +39,10 @@ const Main = () => {
               className="btn border border-dark rounded-5 text-dark border-info custom-btn"
               onClick={handleClick}
             >
-              Get Started
+              Gallery
             </button>
           </div>
-
+          <Carousel />
           <About />
         </div>
       </div>
