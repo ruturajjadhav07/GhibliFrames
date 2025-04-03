@@ -41,12 +41,26 @@ const Gallery = () => {
 
   return (
     <div className="container mt-2">
-      <div className="sticky-header d-flex justify-content-between p-3">
+      <div
+        className="sticky-header d-flex justify-content-between p-3"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 1000,
+          backgroundColor: "rgba(255, 255, 255, 0.7)",
+          backdropFilter: "blur(10px)", 
+          WebkitBackdropFilter: "blur(10px)",
+        }}
+      >
         <h2 className="text-center mb-0">Ghibli Image Gallery</h2>
         <button className="btn btn-primary" onClick={submit}>
           Add Image
         </button>
       </div>
+
+      <div style={{ marginTop: "80px" }}></div>
 
       {loading && <p className="text-center">Loading images...</p>}
       {error && <p className="text-danger text-center">{error}</p>}
@@ -59,7 +73,7 @@ const Gallery = () => {
                 src={img.image}
                 alt={img.description}
                 className="card-img-top"
-                style={{ maxHeight: "300px", objectFit: "cover" }}
+                style={{ maxHeight: "100%", objectFit: "contain" }}
               />
               <div className="card-body text-center">
                 <h3 className="card-text">{img.description}</h3>
